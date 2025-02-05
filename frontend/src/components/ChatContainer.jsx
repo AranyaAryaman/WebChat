@@ -7,7 +7,7 @@ import { useAuthStore } from '../store/useAuthStore';
 import {formatMessageTime} from "../lib/utils";
 
 const ChatContainer = () => {
-  const {messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeToMessages} = useChatStore();
+  const {messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeToMessages,} = useChatStore();
   const { authUser } = useAuthStore();
   const messageEndRef = useRef(null);
 
@@ -74,7 +74,7 @@ const ChatContainer = () => {
       </div>
       <MessageInput />
     </div>
-  )
-}
+  );
+};
 
 export default ChatContainer

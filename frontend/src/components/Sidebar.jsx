@@ -11,10 +11,10 @@ const Sidebar = () => {
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
 
   useEffect(() => {
-    getUsers()
+    getUsers();
   }, [getUsers]);
 
-  const filteredUsers = showOnlineOnly ? users.filter(user => onlineUsers.includes(user._id)) : users;
+  const filteredUsers = showOnlineOnly ? users.filter((user) => onlineUsers.includes(user._id)) : users;
 
   if (isUsersLoading) return <SideBarSkeleton />;
 
@@ -24,6 +24,7 @@ const Sidebar = () => {
         <div className='flex items-center gap-2'>
           <Users className="size-6"></Users>
           <span className="font-medium hidden lg:block"> Contacts</span>
+          </div>
           <div className="mt-3 hidden lg:flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
             <input
@@ -76,7 +77,6 @@ const Sidebar = () => {
           {filteredUsers.length === 0 && (
             <div className="text-center text-zinc-500 py-4">No online users</div>
           )}
-        </div>
       </div>
     </aside>
   );
